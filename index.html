@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maqsood Ahmed Ansari — Data Analyst / GenAI</title>
+  <meta name="description" content="Software Engineer turned Data Analyst. Python, SQL, LangGraph, RAG. Aptsol Global Tech. Based in Hyderabad — open to remote.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="#home">MAQSOOD<span>.</span></a>
+      <nav>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="nav-cta" href="assets/resume/MaqsoodAhmedAnsariResume.pdf">Resume</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div>
+        <div class="pill"><i></i> Hyderabad · open to remote & relocation</div>
+        <h1>Maqsood Ahmed Ansari<br><em>builds with data, then with models.</em></h1>
+        <p>
+          Software Engineer turned Data Analyst. Python, SQL, and Power BI for analytics;
+          LangChain / LangGraph when the question is a document or a table.
+          Most recently a Software Engineer at Aptsol Global Tech (Apr–Oct 2024) —
+          10,000+ lines of production code, 30% faster paths after Python and SQL work.
+        </p>
+        <p style="margin-top:12px">
+          MTech CSE, Osmania University · AWS ML Specialty · IBM Data Science · TensorFlow Developer.
+          Interviewing for Data Analyst, Junior Data Scientist, and GenAI / LLM application roles.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#work">Selected work</a>
+          <a class="btn btn-ghost" href="https://github.com/MacAns-117/Projects">GitHub projects</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/maqsood-ahmed-ansari/">LinkedIn</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>13</b><span>projects in one repo</span></div>
+          <div class="stat"><b>77.3%</b><span>RAG Hit@8 (hybrid)</span></div>
+          <div class="stat"><b>0.815</b><span>churn ROC-AUC</span></div>
+          <div class="stat"><b>19/19</b><span>CSV pandas gold</span></div>
+        </div>
+      </div>
+      <figure class="portrait">
+        <img src="assets/images/photo.jpg" alt="Portrait of Maqsood Ahmed Ansari">
+        <figcaption>Python · SQL · LangGraph · Django</figcaption>
+      </figure>
+    </section>
+
+    <section class="section" id="work">
+      <div class="wrap">
+        <p class="kicker">01 / Work</p>
+        <h2>Selected projects</h2>
+        <p class="lede">Numbers match the GitHub READMEs. Filter by lane. No placeholders.</p>
+        <div class="filters" id="filters">
+          <button class="on" data-filter="all">All</button>
+          <button data-filter="genai">GenAI</button>
+          <button data-filter="ml">ML</button>
+          <button data-filter="analytics">Analytics</button>
+          <button data-filter="django">Django</button>
+        </div>
+        <div class="grid" id="grid">
+
+          <article class="card" data-cat="genai">
+            <div class="card-media" style="--img: url('assets/images/viz.jpg')"><span>GenAI · live</span></div>
+            <div class="card-body">
+              <h3>RAG Document Q&A</h3>
+              <p>Upload PDFs, hybrid retrieve (BM25 + MiniLM), cite filename + page. OCR fallback for scans. Gold set: 24 questions on two arXiv papers.</p>
+              <p class="metric">Hit@8 <strong>77.3%</strong> (17/22) · cosine 59.1% · MMR 68.2%</p>
+              <div class="chips"><span class="chip">LangChain</span><span class="chip">Chroma</span><span class="chip">Groq</span><span class="chip">Streamlit</span></div>
+              <div class="card-links">
+                <a href="https://github.com/MacAns-117/Projects/tree/main/GenAi_Projects/Rag_Document_QA">Code</a>
+                <a href="https://projects-wktkeuxu6u3nqmz9vdyith.streamlit.app/">Live demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="genai">
+            <div class="card-media" style="--img: url('assets/images/churn.jpg')"><span>GenAI</span></div>
+            <div class="card-body">
+              <h3>CSV Insights Assistant</h3>
+              <p>LangGraph router over one CSV at a time. Pandas tools + read-only DuckDB. Plotly figures actually render. Hotel bookings are the default sample; any CSV uploads.</p>
+              <p class="metric">87,230 rows · 27.52% cancel · pandas gold <strong>19/19</strong> · 42 tests</p>
+              <div class="chips"><span class="chip">LangGraph</span><span class="chip">DuckDB</span><span class="chip">Plotly</span><span class="chip">Streamlit</span></div>
+              <div class="card-links">
+                <a href="https://github.com/MacAns-117/Projects/tree/main/GenAi_Projects/Hotel_Insights_Assistant">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="ml">
+            <div class="card-media" style="--img: url('assets/images/churn.jpg')"><span>ML</span></div>
+            <div class="card-body">
+              <h3>Hotel booking cancellation</h3>
+              <p>Binary classification on hotel demand. Temporal split (train 2015–16, test 2017). Random forest vs logistic baseline. No reservation_status column.</p>
+              <p class="metric">Holdout ROC-AUC <strong>0.815</strong> · accuracy 0.76</p>
+              <div class="chips"><span class="chip">scikit-learn</span><span class="chip">pandas</span><span class="chip">seaborn</span></div>
+              <div class="card-links">
+                <a href="https://github.com/MacAns-117/Projects/tree/main/Data_Science(ML)_projects/Hotel_churn_rate">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="ml">
+            <div class="card-media" style="--img: url('assets/images/house.jpg')"><span>ML</span></div>
+            <div class="card-body">
+              <h3>Indian house prices</h3>
+              <p>Regression on the Kaggle house-price challenge train split. Fit on log price. Rupees per sqft is not a feature. Streamlit form in the folder.</p>
+              <p class="metric">Gradient boosting MAE <strong>₹12.1 lakh</strong> · R² 0.71</p>
+              <div class="chips"><span class="chip">scikit-learn</span><span class="chip">Streamlit</span></div>
+              <div class="card-links">
+                <a href="https://github.com/MacAns-117/Projects/tree/main/Data_Science(ML)_projects/Predicting_HP_Using_ADV_Ensamble_Techniques">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="analytics">
+            <div class="card-media" style="--img: url('assets/images/viz.jpg')"><span>Analytics</span></div>
+            <div class="card-body">
+              <h3>Social Buzz — top 5 categories</h3>
+              <p>Accenture / Forage brief. Popularity is sum of reaction scores, not counts. Same ranking in pandas and SQLite.</p>
+              <p class="metric">Animals <strong>68,624</strong> · five categories hold 36% of score</p>
+              <div class="chips"><span class="chip">pandas</span><span class="chip">SQLite</span></div>
+              <div class="card-links">
+                <a href="https://github.com/MacAns-117/Projects/tree/main/Data_Analytics_Projects/Accenture_Data_analytics_and_Visualization">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="analytics">
+            <div class="card-media" style="--img: url('assets/images/playstore.jpg')"><span>Analytics</span></div>
+            <div class="card-body">
+              <h3>Play Store — 14 SQL questions</h3>
+              <p>Kaggle dump, 9,648 apps. Installs are bucket floors. Paid revenue is price times floor. Missing ratings not imputed.</p>
+              <p class="metric">GAME installs <strong>13.9B</strong> (floors) · Facebook 78.2M reviews</p>
+              <div class="chips"><span class="chip">pandas</span><span class="chip">SQLite</span></div>
+              <div class="card-links">
+                <a href="https://github.com/MacAns-117/Projects/tree/main/Data_Analytics_Projects/Playstore_Apps_Analysis_%26_Visualization">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="analytics">
+            <div class="card-media"><span>Analytics</span></div>
+            <div class="card-body">
+              <h3>IMDb movie analysis</h3>
+              <p>5,043 rows to 4,916 titles. Genre, runtime, and director move IMDb; budget moves gross. Pandas, SQLite, and Excel.</p>
+              <p class="metric">Budget vs gross <strong>r = 0.627</strong> after FX drop · Nolan 8.425</p>
+              <div class="chips"><span class="chip">pandas</span><span class="chip">SQLite</span><span class="chip">Excel</span></div>
+              <div class="card-links">
+                <a href="https://github.com/MacAns-117/Projects/tree/main/Data_Analytics_Projects/IMDB_Movie_Analysis">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="analytics">
+            <div class="card-media"><span>Analytics</span></div>
+            <div class="card-body">
+              <h3>Cosmetics ingredient similarity</h3>
+              <p>190 dry-skin moisturizers into a 190 × 2,233 one-hot, t-SNE map, cosine neighbors. Not a dermatology tool.</p>
+              <p class="metric">Example cosine <strong>0.535</strong> (AmorePacific vs Laneige)</p>
+              <div class="chips"><span class="chip">scikit-learn</span><span class="chip">pandas</span></div>
+              <div class="card-links">
+                <a href="https://github.com/MacAns-117/Projects/tree/main/Data_Analytics_Projects/Cosmetics_Ingredient_Analysis">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="analytics">
+            <div class="card-media"><span>Analytics</span></div>
+            <div class="card-body">
+              <h3>Ops analytics and August drop</h3>
+              <p>Two cases: 8-row job throughput, then 19k accounts May–Aug 2014. Descriptive only — no causal claim.</p>
+              <p class="metric">Peak 1,443 engaged · <strong>−17.3%</strong> by 25 Aug</p>
+              <div class="chips"><span class="chip">pandas</span><span class="chip">SQLite</span></div>
+              <div class="card-links">
+                <a href="https://github.com/MacAns-117/Projects/tree/main/Data_Analytics_Projects/Operations_Analytics_And_Investigating_Metric_Spike">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="django">
+            <div class="card-media" style="--img: url('assets/images/todo.jpg')"><span>Django</span></div>
+            <div class="card-body">
+              <h3>Task Manager</h3>
+              <p>Per-user tasks, Bootstrap modals, status toggle. login_required on every page.</p>
+              <p class="metric">6 tests</p>
+              <div class="chips"><span class="chip">Django</span><span class="chip">Bootstrap 5</span></div>
+              <div class="card-links">
+                <a href="https://github.com/MacAns-117/Projects/tree/main/Django_Projects/todo">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="django">
+            <div class="card-media" style="--img: url('assets/images/rms.png')"><span>Django</span></div>
+            <div class="card-body">
+              <h3>Request Management System</h3>
+              <p>Submit a request, staff approve or reject, optional console email so SMTP is not required to run locally.</p>
+              <p class="metric">5 tests · pending to approved / rejected</p>
+              <div class="chips"><span class="chip">Django</span><span class="chip">Bootstrap 5</span></div>
+              <div class="card-links">
+                <a href="https://github.com/MacAns-117/Projects/tree/main/Django_Projects/smtp1">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="django">
+            <div class="card-media" style="--img: url('assets/images/hms.jpg')"><span>Django</span></div>
+            <div class="card-body">
+              <h3>Hospital Management System</h3>
+              <p>Patients and nurses in one app, shared dashboard, ImageField on both models.</p>
+              <p class="metric">2 models · 6 tests</p>
+              <div class="chips"><span class="chip">Django</span><span class="chip">Pillow</span></div>
+              <div class="card-links">
+                <a href="https://github.com/MacAns-117/Projects/tree/main/Django_Projects/HMS">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="ml">
+            <div class="card-media" style="--img: url('assets/images/bot.jpg')"><span>Python</span></div>
+            <div class="card-body">
+              <h3>Stella Bot</h3>
+              <p>Rule-based voice script. Google speech-to-text in, pyttsx3 out. Keyword commands — not a model.</p>
+              <div class="chips"><span class="chip">speech_recognition</span><span class="chip">pyttsx3</span></div>
+              <div class="card-links">
+                <a href="https://github.com/MacAns-117/Projects/tree/main/Data_Science(ML)_projects/Stella_Bot">Code</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="wrap">
+        <p class="kicker">02 / Experience</p>
+        <h2>Where I worked</h2>
+        <p class="lede">Same titles and dates as GitHub. Gilbert Research Center and Brainnest sit under certifications — they were training programs.</p>
+        <div class="timeline">
+          <article class="job">
+            <div class="when">Apr 2024 – Oct 2024<br>Hyderabad</div>
+            <div>
+              <h3>Software Engineer</h3>
+              <p class="co">Aptsol Global Tech Pvt Ltd</p>
+              <ul>
+                <li>Authored and maintained 10,000+ lines of production code across Python, SQL, HTML5, and CSS/Bootstrap, with modularity across client projects.</li>
+                <li>99% on-time delivery by tightening the pipeline and working agile with a 5-person engineering team.</li>
+                <li>Improved system performance by 30% after profiling Python and tuning SQL — smoother pages, shorter load times.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="job">
+            <div class="when">Nov 2023<br>4 weeks</div>
+            <div>
+              <h3>Data Engineer Trainee</h3>
+              <p class="co">MedTourEasy</p>
+              <ul>
+                <li>Healthcare and chemical-component tables under a project mentor. Cleaning, processing, SQL analytics.</li>
+                <li>Delivered Analysis of Chemical Components. Completion certificate, LoR, and letter of appreciation from the Training Head.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="job">
+            <div class="when">Jul 2023 – Sep 2023</div>
+            <div>
+              <h3>Data Analytics Trainee</h3>
+              <p class="co">Trainity</p>
+              <ul>
+                <li>Python, SQL, Power BI, and EDA across 5+ datasets (Instagram users, Play Store apps, and others).</li>
+                <li>Capstone: Playstore Apps Analysis and Visualization — categories by installs and review sentiment.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <p class="kicker">03 / About</p>
+        <h2>Short version</h2>
+        <div class="about-grid">
+          <div>
+            <p>Software Engineer turned early-career Data Analyst. Hands-on with data pipelines, ML models, and analytics dashboards in Python, SQL, and Power BI — and two GenAI apps (RAG + a LangGraph CSV assistant) in the same Projects repo.</p>
+            <p>Most recently Software Engineer at Aptsol Global Tech. Before that, data traineeships at MedTourEasy and Trainity. MTech in CSE, Osmania University. Certifications from AWS, IBM, TensorFlow, and Forage (Accenture, PwC).</p>
+            <p>Thirteen projects live under <a href="https://github.com/MacAns-117/Projects">github.com/MacAns-117/Projects</a>. Each folder has a README with numbers. Reach me at <a href="mailto:maqsood.a.ansari@gmail.com">maqsood.a.ansari@gmail.com</a>.</p>
+          </div>
+          <div>
+            <div class="skill-block">
+              <h3>GenAI</h3>
+              <p>LangChain, LangGraph, Chroma, DuckDB, Groq, MiniLM, Streamlit, FastAPI, pytest</p>
+            </div>
+            <div class="skill-block">
+              <h3>Data and ML</h3>
+              <p>Python, pandas, SQL / SQLite, scikit-learn, Power BI, matplotlib, seaborn</p>
+            </div>
+            <div class="skill-block">
+              <h3>Web</h3>
+              <p>Django, HTML, CSS, Bootstrap, JavaScript</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="wrap">
+        <p class="kicker">04 / Education and certs</p>
+        <h2>School and paper</h2>
+        <p class="lede">University only. Training programs that were not jobs are listed as certifications.</p>
+        <div class="split">
+          <div class="edu">
+            <h3>MTech, Computer Science and Engineering</h3>
+            <p>Osmania University · Sep 2019 – Sep 2022 · 7.81 CGPA</p>
+          </div>
+          <div class="edu">
+            <h3>BE, Information Technology</h3>
+            <p>Osmania University · Aug 2015 – May 2019 · 67%</p>
+          </div>
+        </div>
+        <div class="split" style="margin-top:16px">
+          <div class="cert"><h3>AWS Certified Machine Learning – Specialty</h3><p>AWS · issued Feb 2022</p></div>
+          <div class="cert"><h3>AWS Certified Cloud Practitioner</h3><p>AWS</p></div>
+          <div class="cert"><h3>IBM Data Science</h3><p>Coursera / IBM · Oct 2022</p></div>
+          <div class="cert"><h3>TensorFlow Developer Certificate</h3><p>TensorFlow · issued Oct 2022</p></div>
+          <div class="cert"><h3>Accenture Data Analytics and Visualization</h3><p>Forage · Dec 2022</p></div>
+          <div class="cert"><h3>PwC Power BI Virtual Experience</h3><p>Forage · Nov 2022</p></div>
+          <div class="cert"><h3>Playstore Apps Analysis (SQL + Power BI)</h3><p>HiCounselor · Jan 2023</p></div>
+          <div class="cert"><h3>Data Science and ML Internship Program</h3><p>Gilbert Research Center · May–Jul 2023</p></div>
+          <div class="cert"><h3>Data Analysis Industry Training</h3><p>Brainnest · Jan 2023</p></div>
+        </div>
+        <p class="lede" style="margin-top:18px">Full scans: <a href="https://github.com/MacAns-117/Badges">github.com/MacAns-117/Badges</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
+        <p class="kicker">05 / Contact</p>
+        <h2>Say hello</h2>
+        <p class="lede">Email is the fastest. LinkedIn slug is the current one — not the old deleted profile.</p>
+        <div class="contact-row">
+          <a href="mailto:maqsood.a.ansari@gmail.com"><small>Email</small>maqsood.a.ansari@gmail.com</a>
+          <a href="https://www.linkedin.com/in/maqsood-ahmed-ansari/"><small>LinkedIn</small>/in/maqsood-ahmed-ansari</a>
+          <a href="https://github.com/MacAns-117"><small>GitHub</small>@MacAns-117</a>
+          <a href="assets/resume/MaqsoodAhmedAnsariResume.pdf"><small>Resume</small>Download PDF</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Maqsood Ahmed Ansari · Hyderabad</div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
