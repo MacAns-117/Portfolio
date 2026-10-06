@@ -6,4 +6,3 @@ Content matches [GitHub](https://github.com/MacAns-117) and [LinkedIn](https://w
 
 Resume: `assets/resume/Maqsood_Ahmed_Ansari_Resume.pdf` (one page, one column, selectable text).
 
-Push this folder to the `Portfolio` repo root. GitHub Pages serves `index.html`.
