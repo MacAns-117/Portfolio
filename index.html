@@ -3,19 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maqsood Ahmed Ansari | Data Analyst</title>
-  <meta name="description" content="Data analyst and generative-AI tools. Pandas and SQL, RAG over PDFs, LangGraph over one CSV. Hyderabad, open to remote.">
-  <meta name="theme-color" content="#07090d">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Maqsood Ahmed Ansari | Python Developer</title>
+  <meta name="description" content="Python developer focused on RAG chatbots, data analysis, and Django & FastAPI. Based in Hyderabad, open to remote.">
+  <meta name="theme-color" content="#0b0614">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <div id="intro" role="status" aria-live="polite">
+    <div class="intro-mark">
+      <div class="intro-sigil" aria-hidden="true"></div>
+      <p>Initializing profile</p>
+    </div>
+  </div>
+
   <header class="nav">
-    <div class="wrap">
-      <a href="#top" style="text-decoration:none;font-weight:500">MAQSOOD ANSARI</a>
-      <nav class="links">
+    <div class="wrap bar">
+      <a class="brand" href="#top"><span class="orb" aria-hidden="true"></span>Maqsood Ansari</a>
+      <nav class="nav-links" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -23,12 +41,13 @@
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
-      <div style="display:flex;gap:.5rem;align-items:center">
+      <div class="nav-actions">
         <a class="btn btn-solid" href="assets/resume/Maqsood_Ansari_DA_AI.pdf">Resume</a>
-        <button class="menu btn" id="menu" aria-expanded="false" aria-label="Open menu">Menu</button>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light theme">◐</button>
+        <button class="menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">☰</button>
       </div>
     </div>
-    <nav class="drawer" id="drawer">
+    <nav class="drawer" id="drawer" aria-label="Mobile">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
@@ -37,224 +56,275 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
-  <main id="top">
-    <section class="wrap hero">
-      <div>
-        <p class="pill"><span class="dot"></span> Open to remote · Hyderabad</p>
-        <p class="kicker">Hi, I’m Maqsood</p>
-        <h1>Data Analyst<span class="sub">Generative AI</span></h1>
-        <p class="lede">I clean tables in pandas and check the same figures in SQL, then write what the numbers mean. The generative work is a RAG app over PDFs, with page citations, and a LangGraph assistant for one CSV.</p>
+
+  <main id="main">
+    <section class="hero wrap" id="top">
+      <div class="hero-copy">
+        <p class="pill"><span class="dot" aria-hidden="true"></span> Open to remote · Hyderabad</p>
+        <h1>Python Developer</h1>
+        <p class="lede">I build practical Python systems you can actually use — <strong>RAG chatbots</strong>, <strong>data analysis</strong>, and <strong>Django &amp; FastAPI</strong> — with tests and honest evaluation where it matters.</p>
         <div class="actions">
           <a class="btn btn-solid" href="#contact">Get in touch</a>
           <a class="btn" href="assets/resume/Maqsood_Ansari_DA_AI.pdf">Download resume</a>
           <a class="btn" href="https://github.com/MacAns-117">GitHub</a>
         </div>
-        <div class="stats">
-          <div class="stat"><b>77.3%</b><span>RAG Hit@8</span></div>
-          <div class="stat"><b>19/19</b><span>pandas gold</span></div>
-          <div class="stat"><b>87,230</b><span>CSV rows</span></div>
-          <div class="stat"><b>68,624</b><span>top category</span></div>
-        </div>
       </div>
-      <figure class="portrait">
-        <img src="assets/images/photo.jpg" alt="Portrait of Maqsood Ahmed Ansari">
-        <figcaption>Python · SQL · Power BI · LangGraph</figcaption>
-      </figure>
+
+      <article class="terminal" aria-label="Animated terminal profile card">
+        <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>MacAns-117/portfolio.sh</span></div>
+        <div class="term-body" id="term-body"></div>
+      </article>
+
+      <div class="stats" aria-label="Selected results">
+        <div class="stat"><b data-count="77.3" data-decimals="1" data-suffix="%">77.3%</b><span>RAG Hit@8</span></div>
+        <div class="stat"><b data-count="19" data-suffix="/19">19/19</b><span>pandas gold</span></div>
+        <div class="stat"><b data-count="87230">87230</b><span>CSV rows</span></div>
+        <div class="stat"><b data-count="68624">68624</b><span>top category</span></div>
+      </div>
+      <p class="note" style="text-align:center;margin:0.8rem auto 0;max-width:44rem">Hit@8 means the gold page was in the top 8 chunks, not that every generated sentence was correct. The 19/19 pandas check does not call the LLM. Animals was the top Social Buzz category (score 68,624).</p>
     </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span><b>Python</b> · SQL · pandas · Power BI · Django · FastAPI · LangChain · LangGraph · Chroma · DuckDB · Groq · Streamlit · pytest · scikit-learn · Plotly</span>
+        <span><b>Python</b> · SQL · pandas · Power BI · Django · FastAPI · LangChain · LangGraph · Chroma · DuckDB · Groq · Streamlit · pytest · scikit-learn · Plotly</span>
+      </div>
+    </div>
 
     <section class="block" id="about">
       <div class="wrap about">
-        <div>
+        <div class="reveal">
           <p class="eyebrow">About</p>
-          <h2>Short version</h2>
-          <p class="lede">Early-career data analyst who also builds generative-AI tools for working with data. MTech in Computer Science and Engineering, Osmania University. Most recently a software engineer at Aptsol Global Tech. Before that, short data traineeships at MedTourEasy and Trainity.</p>
-          <p class="lede">Public work lives in <a href="https://github.com/MacAns-117/Projects">github.com/MacAns-117/Projects</a>. The five projects on the resume are the ones to read first.</p>
+          <h2 class="typed-head" data-text="Short version"></h2>
+          <p>Software Engineer at Aptsol Global (Apr–Oct 2024). MTech in CSE from Osmania University. IBM Data Science (Coursera). Accenture and PwC virtual experience programmes (Forage). Based in Hyderabad, India — open to remote.</p>
+          <p>Public work lives in <a class="glow-link" href="https://github.com/MacAns-117/Projects">github.com/MacAns-117/Projects</a> (GenAI, Django, data analytics, and ML folders).</p>
+          <div class="facts">
+            <div class="fact"><small>Location</small><div>Hyderabad, India</div></div>
+            <div class="fact"><small>Focus</small><div>RAG, data analysis, Django &amp; FastAPI</div></div>
+            <div class="fact"><small>Education</small><div>MTech CSE, Osmania</div></div>
+            <div class="fact"><small>Status</small><div>Open to remote</div></div>
+          </div>
         </div>
-        <div class="facts">
-          <div class="fact"><small>Location</small><div>Hyderabad, India</div></div>
-          <div class="fact"><small>Focus</small><div>Data analysis, RAG, LangGraph</div></div>
-          <div class="fact"><small>Education</small><div>MTech CSE, Osmania</div></div>
-          <div class="fact"><small>Status</small><div>Open to remote</div></div>
-        </div>
+        <figure class="portrait reveal">
+          <img src="assets/images/photo.jpg" width="548" height="720" alt="Portrait of Maqsood Ahmed Ansari">
+          <figcaption>Python · SQL · Power BI · LangGraph</figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="block" id="skills">
-      <div class="wrap">
+      <div class="wrap reveal">
         <p class="eyebrow">Skills</p>
-        <h2>What I actually use</h2>
+        <h2 class="typed-head" data-text="What I actually use"></h2>
         <div class="skills">
-          <article class="skill"><h3>Languages</h3><p>HTML, SQL, JavaScript, Python, Rust</p></article>
-          <article class="skill"><h3>Data Analysis</h3><p>Pandas, NumPy, Matplotlib, Excel, EDA, Seaborn, Power BI, MySQL, SQLite</p></article>
-          <article class="skill"><h3>Data Science and Machine Learning</h3><p>Random Forests, Gradient Boosting, XGBoost, CatBoost, LightGBM, PyCaret, TensorFlow</p></article>
-          <article class="skill"><h3>Generative AI</h3><p>RAG, LLMs, LangChain, LangGraph, Chroma, MiniLM, BM25, Groq, DuckDB, Plotly, FastAPI, pytest, pdfplumber, Tesseract OCR</p></article>
-          <article class="skill"><h3>Cloud and Tools</h3><p>AWS (basic), Docker, Streamlit, Git & GitHub, VS Code, Jupyter</p></article>
+          <article class="skill"><h3>Languages</h3><p>HTML, SQL, JavaScript, Python</p></article>
+          <article class="skill"><h3>Data analysis</h3><p>Pandas, NumPy, Matplotlib, Excel, EDA, Seaborn, Power BI, MySQL, SQLite</p></article>
+          <article class="skill"><h3>Data science and machine learning</h3><p>Random Forests, Gradient Boosting, XGBoost, CatBoost, LightGBM, PyCaret, scikit-learn, SciPy</p></article>
+          <article class="skill"><h3>Generative AI</h3><p>RAG, LLMs, LangChain, LangGraph, Chroma, MiniLM, BM25, Groq, HuggingFace, DuckDB, Plotly, FastAPI, pytest, pdfplumber, Tesseract OCR, Streamlit</p></article>
+          <article class="skill"><h3>Python full stack</h3><p>Django, FastAPI, HTML5, CSS3, Bootstrap, JavaScript</p></article>
+          <article class="skill"><h3>Tools</h3><p>Docker, Git &amp; GitHub, VS Code, Jupyter</p></article>
         </div>
       </div>
     </section>
 
     <section class="block" id="projects">
       <div class="wrap">
-        <p class="eyebrow">Projects</p>
-        <h2>Selected work</h2>
-        <p class="lede">Open the live apps and try them.</p>
-        <div class="filters">
-          <button class="on" data-filter="featured">On the resume</button>
-          <button data-filter="all">All</button>
-          <button data-filter="genai">GenAI</button>
-          <button data-filter="analytics">Analytics</button>
-          <button data-filter="more">More</button>
+        <div class="reveal">
+          <p class="eyebrow">Projects</p>
+          <h2 class="typed-head" data-text="Selected work"></h2>
+          <p class="section-lede">Open the live apps and try them. Code links go to the public Projects repo.</p>
+        </div>
+        <div class="filters" role="toolbar" aria-label="Filter projects">
+          <button class="is-on" type="button" data-filter="featured" aria-pressed="true">Featured</button>
+          <button type="button" data-filter="all" aria-pressed="false">All</button>
+          <button type="button" data-filter="genai" aria-pressed="false">GenAI</button>
+          <button type="button" data-filter="analytics" aria-pressed="false">Analytics</button>
+          <button type="button" data-filter="apps" aria-pressed="false">Apps</button>
         </div>
         <div class="grid" id="grid">
-          <article class="card" data-cat="genai" data-feat="1">
-            <img src="assets/images/rag.jpg" alt="">
-            <div class="pad">
-              <h3>RAG Document Q&A</h3>
-              <p>Ask questions over uploaded PDFs. Hybrid BM25 plus vector search. Groq answers with the filename and the page.</p>
-              <p class="metric">Hit@8 77.3% (17/22) · cosine 59.1% · MMR 68.2%</p>
-              <div class="chips"><span>LangChain</span><span>Chroma</span><span>Groq</span></div>
-              <div class="links-row">
-                <a href="https://github.com/MacAns-117/Projects/tree/main/GenAi_Projects/Rag_Document_QA">Code</a>
-                <a href="https://projects-wktkeuxu6u3nqmz9vdyith.streamlit.app/">Live</a>
-              </div>
+          <article class="card reveal" data-cat="genai" data-feat="1">
+            <h3>RAG Document Q&amp;A with Citations</h3>
+            <p>Multi-doc RAG with hybrid retrieval (BM25 + vector cosine), page citations, OCR fallback for scanned PDFs, and a FastAPI wrapper. On a 24-question gold set (22 in scope), hybrid search Hit@8 was 77.3% (17/22) vs 59.1% for cosine-only. Hit@8 means the gold page was in the top 8 chunks, not that every generated sentence was correct.</p>
+            <p class="metric">Hit@8 77.3% (17/22) · cosine 59.1% · MMR 68.2%</p>
+            <div class="chips"><span>LangChain</span><span>Chroma</span><span>Groq</span><span>Streamlit</span><span>FastAPI</span></div>
+            <div class="links-row">
+              <a class="glow-link" href="https://github.com/MacAns-117/Projects/tree/main/GenAi_Projects/Rag_Document_QA">Code</a>
+              <a class="glow-link" href="https://projects-wktkeuxu6u3nqmz9vdyith.streamlit.app/">Live</a>
             </div>
           </article>
-          <article class="card" data-cat="genai" data-feat="1">
-            <img src="assets/images/csv.jpg" alt="">
-            <div class="pad">
-              <h3>CSV Insights Assistant</h3>
-              <p>LangGraph routes a question to data, a chart, or both. Pandas and read-only DuckDB on whatever CSV is loaded.</p>
-              <p class="metric">87,230 rows · pandas gold 19/19</p>
-              <div class="chips"><span>LangGraph</span><span>DuckDB</span><span>Plotly</span></div>
-              <div class="links-row"><a href="https://github.com/MacAns-117/Projects/tree/main/GenAi_Projects/CSV_Insights_Assistant">Code</a></div>
+          <article class="card reveal" data-cat="genai" data-feat="1">
+            <h3>CSV Insights Assistant</h3>
+            <p>LangGraph assistant with data, visualization, and report-writer tools over a loaded CSV (pandas / read-only DuckDB, Plotly charts, schema card so nothing is hard-coded to one file). A pandas gold check passed 19/19 on the sample facts (that check does not call the LLM). 88 tests.</p>
+            <p class="metric">87,230 rows · pandas gold 19/19 · 88 tests</p>
+            <div class="chips"><span>LangGraph</span><span>DuckDB</span><span>Plotly</span><span>Streamlit</span></div>
+            <div class="links-row">
+              <a class="glow-link" href="https://github.com/MacAns-117/Projects/tree/main/GenAi_Projects/CSV_Insights_Assistant">Code</a>
+              <a class="glow-link" href="https://portfolio-wtvyr5raavdyaknbh4jml6.streamlit.app/">Live</a>
             </div>
           </article>
-          <article class="card" data-cat="analytics" data-feat="1">
-            <img src="assets/images/social.jpg" alt="">
-            <div class="pad">
-              <h3>Social Buzz content popularity (Accenture Virtual Experience via Forage)</h3>
-              <p>Categories ranked by the sum of reaction scores, not the count. The same top five in pandas and in SQLite.</p>
-              <p class="metric">Animals 68,624 · top five hold 36% of the score</p>
-              <div class="chips"><span>pandas</span><span>SQLite</span></div>
-              <div class="links-row"><a href="https://github.com/MacAns-117/Projects/tree/main/Data_Analytics_Projects/Accenture_Data_analytics_and_Visualization">Code</a></div>
+          <article class="card reveal" data-cat="genai" data-feat="1">
+            <h3>AI Research Agent</h3>
+            <p>LangGraph agent that plans web searches, reads the pages, and writes a report citing each source as [1], [2]; follow-ups in the chat see the previous report. 70 tests. Live web eval has not been run, so no accuracy number is claimed.</p>
+            <p class="metric">70 tests · no accuracy claim</p>
+            <div class="chips"><span>LangGraph</span><span>Groq</span><span>Tavily</span><span>Streamlit</span><span>FastAPI</span></div>
+            <div class="links-row">
+              <a class="glow-link" href="https://github.com/MacAns-117/Projects/tree/main/GenAi_Projects/AI_Research_Agent">Code</a>
+              <a class="glow-link" href="https://projects-4vtuq5ybps6g3rgyzg84ry.streamlit.app/">Live</a>
             </div>
           </article>
-          <article class="card" data-cat="analytics" data-feat="1">
-            <img src="assets/images/play.jpg" alt="">
-            <div class="pad">
-              <h3>Play Store — 14 SQL questions</h3>
-              <p>9,648 apps. Missing ratings stay blank. Installs are bucket floors.</p>
-              <p class="metric">9,648 apps · 1,458 ratings left blank</p>
-              <div class="chips"><span>pandas</span><span>SQLite</span></div>
-              <div class="links-row"><a href="https://github.com/MacAns-117/Projects/tree/main/Data_Analytics_Projects/Playstore_Apps_Analysis_%26_Visualization">Code</a></div>
-            </div>
+          <article class="card reveal" data-cat="analytics" data-feat="1">
+            <h3>Social Buzz Content Popularity — Accenture Virtual Experience (Forage)</h3>
+            <p>Forage / Accenture virtual experience (practice project, not a client job): ranked 16 content categories by summed reaction score; pandas and SQLite agree on the top 5 (Animals 68,624). Those five hold 36% of the score.</p>
+            <p class="metric">Animals 68,624 · top five hold 36% of the score</p>
+            <div class="chips"><span>Python</span><span>pandas</span><span>SQLite</span></div>
+            <div class="links-row"><a class="glow-link" href="https://github.com/MacAns-117/Projects/tree/main/Data_Analytics_Projects/Accenture_Data_analytics_and_Visualization">Code</a></div>
           </article>
-          <article class="card" data-cat="analytics" data-feat="1">
-            <img src="assets/images/ops.jpg" alt="">
-            <div class="pad">
-              <h3>Operations Analytics</h3>
-              <p>Weekly engagement, May–Aug 2014. Opens held. Click-through did not.</p>
-              <p class="metric">Peak 1,443 · −17.3% by 25 Aug · CTR 16.1% → 10.8%</p>
-              <div class="chips"><span>pandas</span><span>SQLite</span></div>
-              <div class="links-row"><a href="https://github.com/MacAns-117/Projects/tree/main/Data_Analytics_Projects/Operations_Analytics_And_Investigating_Metric_Spike">Code</a></div>
-            </div>
+          <article class="card reveal" data-cat="analytics" data-feat="1">
+            <h3>Play Store Apps — 14 SQL questions</h3>
+            <p>HiCounselor live project (not the Trainity capstone). Cleaned a Google Play dump to 9,648 apps and answered 14 assigned questions in pandas and in SQLite. Left 1,458 missing ratings blank instead of filling them with the mean. Install counts are treated as bucket floors.</p>
+            <p class="metric">9,648 apps · 1,458 ratings left blank</p>
+            <div class="chips"><span>pandas</span><span>SQLite</span></div>
+            <div class="links-row"><a class="glow-link" href="https://github.com/MacAns-117/Projects/tree/main/Data_Analytics_Projects/Playstore%20Apps%20Analysis%20%26%20Visualization">Code</a></div>
           </article>
-          <article class="card" data-cat="analytics" hidden>
-            <img src="assets/images/imdb.jpg" alt="">
-            <div class="pad">
-              <h3>IMDb movie analysis</h3>
-              <p>4,916 titles. Budget moves gross, not the score.</p>
-              <p class="metric">Budget vs gross r = 0.627</p>
-              <div class="links-row"><a href="https://github.com/MacAns-117/Projects/tree/main/Data_Analytics_Projects/IMDB_Movie_Analysis">Code</a></div>
-            </div>
+          <article class="card reveal" data-cat="analytics" data-feat="1">
+            <h3>Operations Analytics</h3>
+            <p>Weekly engagement, 1 May–31 Aug 2014, in pandas and SQLite: 19,066 accounts, peak 1,443 engaged users (week of 28 Jul), then 1,194 in the week of 25 Aug (17.3% under the peak). Email open rate stayed about 33–35% while click-through fell from 16.1% to 10.8%.</p>
+            <p class="metric">Peak 1,443 · −17.3% by 25 Aug · CTR 16.1% → 10.8%</p>
+            <div class="chips"><span>pandas</span><span>SQLite</span></div>
+            <div class="links-row"><a class="glow-link" href="https://github.com/MacAns-117/Projects/tree/main/Data_Analytics_Projects/Operations_Analytics_And_Investigating_Metric_Spike">Code</a></div>
           </article>
-          <article class="card" data-cat="analytics" hidden>
-            <img src="assets/images/cosmetics.jpg" alt="">
-            <div class="pad">
-              <h3>Cosmetics ingredient analysis</h3>
-              <p>190 dry-skin moisturizers. One pair is one pair, not a pricing rule.</p>
-              <p class="metric">Example cosine 0.535</p>
-              <div class="links-row"><a href="https://github.com/MacAns-117/Projects/tree/main/Data_Analytics_Projects/Cosmetics_Ingredient_Analysis">Code</a></div>
-            </div>
+          <article class="card reveal" data-cat="analytics" hidden>
+            <h3>IMDb movie analysis</h3>
+            <p>Trainity capstone. 4,916 titles. Genre, runtime and director move the score more than budget; budget vs gross r = 0.627 after outlier removal.</p>
+            <p class="metric">Budget vs gross r = 0.627</p>
+            <div class="chips"><span>Python</span><span>pandas</span><span>Power BI</span></div>
+            <div class="links-row"><a class="glow-link" href="https://github.com/MacAns-117/Projects/tree/main/Data_Analytics_Projects/IMDB_Movie_Analysis">Code</a></div>
           </article>
-          <article class="card" data-cat="more" hidden>
-            <img src="assets/images/hotel.jpg" alt="">
-            <div class="pad">
-              <h3>Hotel booking cancellation</h3>
-              <p>Random forest. Train 2015–2016, test 2017.</p>
-              <p class="metric">Holdout ROC-AUC 0.815</p>
-              <div class="links-row"><a href="https://github.com/MacAns-117/Projects/tree/main/Data_Science(ML)_projects/Hotel_churn_rate">Code</a></div>
-            </div>
+          <article class="card reveal" data-cat="analytics" hidden>
+            <h3>Cosmetics ingredient analysis</h3>
+            <p>190 dry-skin moisturizers. One similar pair is one pair, not a pricing rule.</p>
+            <p class="metric">Example cosine 0.535</p>
+            <div class="chips"><span>Python</span><span>pandas</span></div>
+            <div class="links-row"><a class="glow-link" href="https://github.com/MacAns-117/Projects/tree/main/Data_Analytics_Projects/Cosmetics_Ingredient_Analysis">Code</a></div>
           </article>
-          <article class="card" data-cat="more" hidden>
-            <img src="assets/images/houses.jpg" alt="">
-            <div class="pad">
-              <h3>Indian house prices</h3>
-              <p>Gradient boosting. Rupees per square foot is not a feature.</p>
-              <p class="metric">MAE ₹12.1 lakh · R² 0.71</p>
-              <div class="links-row"><a href="https://github.com/MacAns-117/Projects/tree/main/Data_Science(ML)_projects/Predicting_HP_Using_ADV_Ensamble_Techniques">Code</a></div>
-            </div>
+          <article class="card reveal" data-cat="analytics" hidden>
+            <h3>Hotel Booking Cancellation Prediction</h3>
+            <p>Binary classification on 87K hotel bookings with a temporal train/test split (train 2015–2016, test 2017). Random forest ROC-AUC 0.815 vs logistic baseline 0.801. 10 EDA plots, full writeup.</p>
+            <p class="metric">Holdout ROC-AUC 0.815 vs logistic 0.801</p>
+            <div class="chips"><span>Python</span><span>scikit-learn</span><span>pandas</span><span>seaborn</span></div>
+            <div class="links-row"><a class="glow-link" href="https://github.com/MacAns-117/Projects/tree/main/Data_Science(ML)_projects/Hotel_churn_rate">Code</a></div>
           </article>
-          <article class="card" data-cat="more" hidden>
-            <img src="assets/images/tasks.jpg" alt="">
-            <div class="pad"><h3>Task Manager</h3><p>Per-user tasks. Login required on every page.</p><p class="metric">Django · 6 tests</p><div class="links-row"><a href="https://github.com/MacAns-117/Projects/tree/main/Django_Projects/todo">Code</a></div></div>
+          <article class="card reveal" data-cat="analytics" hidden>
+            <h3>House Price Prediction (Ensemble/Gradient Boosting)</h3>
+            <p>Gradient boosting on 28,711 Indian listings (log target): off by ₹12.1 lakh on a typical home (median absolute error), ₹28.5 lakh on average, R² 0.71. Streamlit form. MTech final-year project, rewritten 2026. Rupees per square foot is not a feature.</p>
+            <p class="metric">Median abs. error ₹12.1 lakh · R² 0.71</p>
+            <div class="chips"><span>Python</span><span>scikit-learn</span><span>PyCaret</span><span>Streamlit</span></div>
+            <div class="links-row"><a class="glow-link" href="https://github.com/MacAns-117/Projects/tree/main/Data_Science(ML)_projects/Predicting_HP_Using_ADV_Ensamble_Techniques">Code</a></div>
           </article>
-          <article class="card" data-cat="more" hidden>
-            <img src="assets/images/requests.jpg" alt="">
-            <div class="pad"><h3>Request Management</h3><p>Staff approve or reject a request.</p><p class="metric">Django · 5 tests</p><div class="links-row"><a href="https://github.com/MacAns-117/Projects/tree/main/Django_Projects/smtp1">Code</a></div></div>
+          <article class="card reveal" data-cat="apps" hidden>
+            <h3>Task Manager Application (Django)</h3>
+            <p>Django task manager with login, per-user CRUD, and Bootstrap modals. 6 tests (added in the 2026 refactor).</p>
+            <p class="metric">Django · 6 tests (2026 refactor)</p>
+            <div class="chips"><span>Django</span><span>Python</span><span>Bootstrap</span></div>
+            <div class="links-row"><a class="glow-link" href="https://github.com/MacAns-117/Projects/tree/main/Django_Projects/todo-task-manager/todo">Code</a></div>
           </article>
-          <article class="card" data-cat="more" hidden>
-            <img src="assets/images/hospital.jpg" alt="">
-            <div class="pad"><h3>Hospital Management</h3><p>Patients and nurses in one app.</p><p class="metric">Django · 6 tests</p><div class="links-row"><a href="https://github.com/MacAns-117/Projects/tree/main/Django_Projects/HMS">Code</a></div></div>
+          <article class="card reveal" data-cat="apps" hidden>
+            <h3>Request Management System (Django)</h3>
+            <p>Staff approve or reject requests; status stored (pending → approved / rejected); email via SMTP (console by default). 5 tests (added in the 2026 refactor).</p>
+            <p class="metric">Django · 5 tests (2026 refactor)</p>
+            <div class="chips"><span>Django</span><span>SQLite</span><span>SMTP</span><span>Bootstrap 5</span></div>
+            <div class="links-row"><a class="glow-link" href="https://github.com/MacAns-117/Projects/tree/main/Django_Projects/request-management-system/smtp1">Code</a></div>
           </article>
-          <article class="card" data-cat="more" hidden>
-            <img src="assets/images/stella.jpg" alt="">
-            <div class="pad"><h3>Stella Bot</h3><p>Keyword voice script. Not a model.</p><div class="links-row"><a href="https://github.com/MacAns-117/Projects/tree/main/Data_Science(ML)_projects/Stella_Bot">Code</a></div></div>
+          <article class="card reveal" data-cat="apps" hidden>
+            <h3>Hospital Management System (Django)</h3>
+            <p>Patient and nurse records in one app, with login and a shared dashboard. 6 tests (added in the 2026 refactor).</p>
+            <p class="metric">Django · 6 tests (2026 refactor)</p>
+            <div class="chips"><span>Django</span><span>SQLite</span><span>Bootstrap 5</span></div>
+            <div class="links-row"><a class="glow-link" href="https://github.com/MacAns-117/Projects/tree/main/Django_Projects/hospital-management/HMS">Code</a></div>
+          </article>
+          <article class="card reveal" data-cat="apps" hidden>
+            <h3>Stella Bot</h3>
+            <p>Rule-based virtual assistant with voice input and output. Not a machine-learning model.</p>
+            <p class="metric">Keyword voice script · not a model</p>
+            <div class="chips"><span>Python</span><span>Speech Recognition</span></div>
+            <div class="links-row"><a class="glow-link" href="https://github.com/MacAns-117/Projects/tree/main/Data_Science(ML)_projects/Stella_Bot">Code</a></div>
           </article>
         </div>
+        <p class="note" style="margin-top:1.2rem">Public code is in <a class="glow-link" href="https://github.com/MacAns-117/Projects">github.com/MacAns-117/Projects</a>.</p>
       </div>
     </section>
 
     <section class="block" id="experience">
-      <div class="wrap">
+      <div class="wrap reveal">
         <p class="eyebrow">Experience</p>
-        <h2>Where I worked</h2>
-        <div style="display:grid;gap:1.5rem;margin-top:1.5rem">
-          <article class="job"><p class="when">Apr 2024 – Oct 2024</p><div><h3>Software Engineer</h3><p class="org">Aptsol Global Tech Pvt Ltd · Hyderabad</p><p>Wrote and maintained client project code in Python, SQL, HTML, and CSS/Bootstrap, including Python profiling and SQL tuning, on a 5-person team.</p></div></article>
-          <article class="job"><p class="when">Nov 2023 · 4 weeks</p><div><h3>Data Engineer Trainee</h3><p class="org">MedTourEasy · Remote</p><p>Cleaned structured records and ran SQL analytics for a chemical-components analysis.</p></div></article>
-          <article class="job"><p class="when">Jul 2023 – Sep 2023</p><div><h3>Data Analytics Trainee</h3><p class="org">Trainity · Remote</p><p>Training in Python, SQL, Power BI, and exploratory analysis. Capstone was Play Store apps analysis and visualization.</p></div></article>
+        <h2 class="typed-head" data-text="Where I worked"></h2>
+        <div class="timeline">
+          <article class="job">
+            <p class="when">Apr 2024 – Oct 2024</p>
+            <div>
+              <h3>Software Engineer</h3>
+              <p class="org">Aptsol Global Tech Pvt Ltd · Hyderabad</p>
+              <p>Built and maintained three Django web apps (task manager, staff request-approval with email notifications, hospital records) with login, role-based access, and CRUD, on a 5-person team. Wrote 10,000+ lines of code across the stint (including the training phase) and delivered 99% of tasks on time. Rebuilt the UI from hand-written CSS to Bootstrap 5. Later refactored those apps and added automated tests (2026); the tests were not part of the original 2024 delivery.</p>
+            </div>
+          </article>
+          <article class="job">
+            <p class="when">Nov 2023 · 4 weeks</p>
+            <div>
+              <h3>Data Engineer Trainee</h3>
+              <p class="org">MedTourEasy · Remote</p>
+              <p>Completed a 4-week Data Engineering Traineeship at MedTourEasy, working under the supervision of a project mentor on real healthcare and chemical-component datasets. Delivered a project titled "Analysis of Chemical Components" — built data processing workflows, performed data cleaning, and ran SQL-based analytics to surface insights from structured records. Earned a Traineeship Completion Certificate, Letter of Recommendation, and Letter of Appreciation from the Training Head.</p>
+            </div>
+          </article>
+          <article class="job">
+            <p class="when">Jul 2023 – Sep 2023</p>
+            <div>
+              <h3>Data Analytics Trainee</h3>
+              <p class="org">Trainity · Remote</p>
+              <p>Completed an intensive data analytics training program covering Python, SQL, Power BI, and exploratory data analysis across 5+ real-world datasets. Built end-to-end analytics projects: data cleaning in pandas, SQL querying in MySQL Workbench, and interactive dashboards in Power BI. Delivered a final capstone on IMDB Movie Analysis &amp; Visualization: genre, runtime and director move the score more than budget; budget vs gross r = 0.627 after outlier removal. (The Play Store apps project is a separate HiCounselor live project, not the Trainity capstone.)</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="block" id="education">
-      <div class="wrap">
+      <div class="wrap reveal">
         <p class="eyebrow">Education</p>
-        <h2>School</h2>
-        <div class="edu" style="margin-top:1.5rem">
-          <article><h3>MTech, Computer Science and Engineering</h3><p>Osmania University · Sep 2019 – Sep 2022 · 7.81 CGPA</p></article>
-          <article><h3>BE, Information Technology</h3><p>Osmania University · Aug 2015 – May 2019</p></article>
+        <h2 class="typed-head" data-text="School and certificates"></h2>
+        <div class="timeline">
+          <article class="edu-item">
+            <p class="when">Sep 2019 – Sep 2022</p>
+            <div>
+              <h3>MTech, Computer Science &amp; Engineering</h3>
+              <p>Osmania University</p>
+            </div>
+          </article>
+          <article class="edu-item">
+            <p class="when">Aug 2015 – May 2019</p>
+            <div>
+              <h3>BE, Information Technology</h3>
+              <p>Osmania University</p>
+            </div>
+          </article>
         </div>
-        <h3 style="margin-top:2rem">Certificates Earned</h3>
-        <ul class="certs" style="margin-top:1rem">
-          <li>AWS Certified Machine Learning – Specialty (AWS)</li>
-          <li>AWS Certified Cloud Practitioner (AWS)</li>
-          <li>TensorFlow Developer Certificate (TensorFlow)</li>
+        <h3 style="margin-top:2rem">Certificates</h3>
+        <ul class="certs">
           <li>IBM Data Science (Coursera / IBM)</li>
-          <li>Accenture Data Analytics and Visualization (Forage)</li>
+          <li>Accenture Data Analytics and Visualization Virtual Experience (Forage)</li>
           <li>PwC Power BI Virtual Experience (Forage)</li>
           <li>Brainnest Data Analysis Industry Training</li>
-          <li>Data Science and Machine Learning Internship Program (Gilbert Research Center)</li>
           <li>Play Store Apps Analysis and Visualization, live project (HiCounselor)</li>
+          <li>Data Science and Machine Learning Internship Program (Gilbert Research Center)</li>
         </ul>
+        <p class="note" style="margin-top:0.9rem">The Accenture and PwC items are Forage virtual experience programmes, not jobs or internships. Certificate files: <a class="glow-link" href="https://github.com/MacAns-117/Badges">github.com/MacAns-117/Badges</a>.</p>
       </div>
     </section>
 
     <section class="block" id="contact">
-      <div class="wrap">
+      <div class="wrap reveal">
         <p class="eyebrow">Contact</p>
-        <h2>Open to remote.</h2>
-        <p class="lede">Email is the fastest way to reach me.</p>
+        <h2 class="typed-head" data-text="Open to remote."></h2>
+        <p class="section-lede">Email is the fastest way to reach me.</p>
         <div class="contact">
           <a href="mailto:maqsood.a.ansari@gmail.com"><small>Email</small>maqsood.a.ansari@gmail.com</a>
           <a href="tel:+919030901068"><small>Phone</small>+91 90309 01068</a>
@@ -265,7 +335,8 @@
       </div>
     </section>
   </main>
-  <footer><div class="wrap">Maqsood Ahmed Ansari · Hyderabad</div></footer>
+
+  <footer><div class="wrap">Maqsood Ahmed Ansari · Hyderabad · Open to remote</div></footer>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
